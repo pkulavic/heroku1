@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Submit</button>
+</form>
+
+{% if count > 0 %}
+<h1>Results:</h1>
+<ul>
+  {% for obj in queryset %}
+  <li><a href="/find/{{ obj.slug }}">{{ obj }}</a></li>
+    <ul>
+      <li>{{ obj.subject }}</li>
+      <li>{{ obj.city }}</li>
+      <li>{{ obj.bio }}</li>
+      <li>Available at these times:</li>
+        <ul>
+          {% for time in availability_set %}
+          <li>{{ time }}</li>
+          {% endfor %}
+        </ul>
+    </ul>
+  {% endfor %}
+</ul>
+
+
+{% elif count == 0 %}
+<p>Sorry! No Tutors matched your criteria.</p>
+{% endif %}
+{% endblock %}

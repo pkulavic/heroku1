@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Book Appointment</h1>
+<p>Click on a time to schedule an appointment. You will be prompted to insert payment information, but you will not be charged until after your first session.</p>
+{{ tutor }}
+<br>
+{% for time in availability_set %}
+{{ time }} <br>
+{% endfor %}
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Select</button>
+</form>
+
+{% endblock %}
