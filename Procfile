@@ -1,1 +1,1 @@
-web: gunicorn pract_2.wsgi --logfile--
+web: gunicorn pract_2.wsgi
