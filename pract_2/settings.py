@@ -25,7 +25,7 @@ SECRET_KEY = '55_vt@f*x9v1=i3!z&g=pbzh9qshm-#of-x2mo+9e3u#labh_('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nameless-tor-87617.herokuapp.com']
 
 
 # Application definition
